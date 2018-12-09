@@ -90,5 +90,4 @@
             $(this).attr('src', $(this).data('still'));
             $(this).attr('data-state', 'still');
         }
-    
-        });
+});
