@@ -20,7 +20,7 @@
     
     function addNewButton() {
         $("#addGif").on("click", function() {
-            var cartoon = $("#topicInput").val().trim();
+        var cartoon = $("#topicInput").val().trim();
             if (cartoon === ""){
     // Rejects empty buttons//
                 return false;
@@ -46,19 +46,19 @@
         .then(function(response) {
             $("#gifsView").empty();
     //show results of giphys
-            var results = response.data;
+        var results = response.data;
             if (results === ""){
                 alert("There is not a giffy for this request!");	
             }
             for (var i = 0; i < results.length; i++){
     //put gifs in a div
-                var gifDiv = $("<div1>");
+        var gifDiv = $("<div1>");
     //pull rating of gif
-                var gifRating = $("<p>").text("Rating " + results[i].rating);
+        var gifRating = $("<p>").text("Rating " + results[i].rating);
                 gifDiv.append(gifRating);
     
     //pull gif
-                var gifImage = $("<img>");
+        var gifImage = $("<img>");
                 gifImage.attr("src", results[i].images.fixed_height_small_still.url);
     //still images
                 gifImage.attr("data-still", results[i].images.fixed_height_small_still.url);
