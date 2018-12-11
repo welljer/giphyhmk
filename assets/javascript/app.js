@@ -35,15 +35,16 @@
     
     function displayGifs() {
         var cartoon = $(this).attr("data-name");
-        var apiKey = "2C3COcAWeZBS1aQpza5H2ajkLY9mjJso"
-        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + cartoon;
+        console.log(cartoon)
+        // var apiKey = "2C3COcAWeZBS1aQpza5H2ajkLY9mjJso"
+        var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=2C3COcAWeZBS1aQpza5H2ajkLY9mjJso" + "&q="+ cartoon;
         
         $.ajax({
             url: queryURL,
             method: 'GET'
         })
-    console.log(queryURL)
         .then(function(response) {
+            console.log(response)
             $("#gifsView").empty();
     //show results of giphys
         var results = response.data;
