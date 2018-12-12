@@ -1,4 +1,5 @@
 "use strict"
+$(document).ready(function(){
     // my array
     var topic = ["Transformers","He man","The Tick","Digimon","Voltron"];
     
@@ -20,8 +21,8 @@
     
     function addNewButton() {
         $("#addGif").on("click", function() {
-        var cartoon = $("#topicInput").val().trim();
-            if (cartoon === ""){
+            var cartoon = $("#topicInput").val().trim()
+            if (cartoon ===""){
     // Rejects empty buttons//
                 return false;
             }
@@ -48,8 +49,8 @@
             $("#gifsView").empty();
     //show results of giphys
         var results = response.data;
-            if (results === ""){
-                alert("There is not a giffy for this request!");	
+            if (results === " "){
+                alert("There is not a gif for this request!");	
             }
             for (var i = 0; i < results.length; i++){
     //put gifs in a div
@@ -91,4 +92,5 @@
             $(this).attr('src', $(this).data('still'));
             $(this).attr('data-state', 'still');
         }
+    });
 });
